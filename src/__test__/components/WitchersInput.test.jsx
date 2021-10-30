@@ -9,22 +9,25 @@ const testsSetup = () => {
   return inputThings;
 };
 
-test("label renders with correct value", () => {
-  const { getByText } = testsSetup();
-  const labelEl = getByText("Hallo Frau");
+describe("tests wrapper", () => {
+  // First test must be a snapshot of the component
+  test("label renders with correct value", () => {
+    const { getByText } = testsSetup();
+    const labelEl = getByText("Hallo Frau");
 
-  expect(labelEl).toHaveClass("witchers-label");
-});
+    expect(labelEl).toHaveClass("witchers-label");
+  });
 
-test("it should contain correct value", () => {
-  const { getByLabelText } = render(
-    <WitchersInput
-      value={"Interesting"}
-      setValue={() => {}}
-      label="Nice Test"
-    />
-  );
-  const inputEl = getByLabelText("witcher-input");
+  test("it should contain correct value", () => {
+    const { getByLabelText } = render(
+      <WitchersInput
+        value={"Interesting"}
+        setValue={() => {}}
+        label="Nice Test"
+      />
+    );
+    const inputEl = getByLabelText("witcher-input");
 
-  expect(inputEl.value).toBe("Interesting");
-});
+    expect(inputEl.value).toBe("Interesting");
+  });
+})
