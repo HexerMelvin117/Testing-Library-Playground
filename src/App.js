@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import "./App.css";
-import WitchersInput from "./components/WitchersInput";
+import React, { useState } from 'react';
+import './App.css';
+import WitchersInput from './components/WitchersInput';
+import OrderTrackingView from './modules/OrderTracking';
 
 function App() {
-  const [firstInputValue, setFirstInputValue] = useState("");
+  const [firstInputValue, setFirstInputValue] = useState('');
 
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
         value={firstInputValue}
         setValue={setFirstInputValue}
       />
+      <OrderTrackingView />
     </div>
   );
 }
